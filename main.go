@@ -36,7 +36,7 @@ import (
   
 	frames = camera.GetOutput()
 	http.HandleFunc("/stream", imageServ)
-	log.Fatal(http.ListenAndServe(port, nil))
+	log.Fatal(http.ListenAndServe(":"+port, nil))
   }
 
   func imageServ(w http.ResponseWriter, req *http.Request) {

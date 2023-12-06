@@ -19,7 +19,16 @@ import (
   
   func main() {
 	port :=os.Getenv("PORT")
+
+	if port == "" {
+		port = "4040"
+	}
+
 	devName :=os.Getenv("DEV_NAME")
+
+	if devName == "" {
+		devName ="/dev/video0"
+	}
   
 	camera, err := device.Open(
 	  devName,
